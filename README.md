@@ -138,7 +138,7 @@ See `requirements.txt` for exact versions.
 ## Reproducibility
 
 To reproduce the results from the manuscript, the input data must be obtained independently:
-- **UK Biobank**: Available upon approved application (Application No. 100359)
+- **UK Biobank**: Available upon approved application
 - **ClinVar**: Freely available from [NCBI ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/)
 - **STRING v12**: Freely available from [STRING](https://string-db.org/)
 
