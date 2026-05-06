@@ -24,7 +24,7 @@ Examples:
         --output results/diabetes/
 
     # Using config file
-    python run_pipeline.py --config configs/ukb_mm.yaml
+    python run_pipeline.py --config config.yaml
 """
 
 import argparse

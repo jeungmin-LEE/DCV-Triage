@@ -137,18 +137,12 @@ See `requirements.txt` for exact versions.
 
 ## Reproducibility
 
-To reproduce the results from the manuscript:
+To reproduce the results from the manuscript, the input data must be obtained independently:
+- **UK Biobank**: Available upon approved application (Application No. 100359)
+- **ClinVar**: Freely available from [NCBI ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/)
+- **STRING v12**: Freely available from [STRING](https://string-db.org/)
 
-```bash
-# UKB MM analysis (Table 1)
-python run_pipeline.py --config configs/ukb_mm.yaml
-
-# ClinVar balanced ablation (Table 2)
-python run_pipeline.py --config configs/clinvar_ablation.yaml
-
-# Cross-disease seed swap (Fig. 2)
-python run_pipeline.py --config configs/seed_swap.yaml
-```
+Configuration files used for the manuscript analyses are provided in `configs/`.
 
 ## Citation
 
