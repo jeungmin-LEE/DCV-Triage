@@ -1,0 +1,65 @@
+# DCV-TRIAGE Configuration
+# Disease-Contextual VUS Triage
+# ==============================
+
+# Seed genes for disease context specification
+# These genes anchor the network propagation and define the disease context.
+# Replace with your disease-specific seed genes.
+seed_genes:
+  - CRBN
+  - FGFR3
+  - TP53
+  - KRAS
+  - TNFRSF17
+  - NRAS
+  - LIG4
+  - BRAF
+  - CXCR4
+  - XPO1
+  - CD38
+  - RBX1
+  - CUL4A
+  - PSMB5
+  - DDB1
+  - BCL2
+  - FDPS
+  - TUBB4A
+
+# Input file paths
+data:
+  annovar_file: null          # Path to ANNOVAR-annotated variant CSV
+  string_file: null           # Path to STRING PPI file (9606.protein.links.full.v12.0.txt)
+  alias_file: null            # Path to STRING alias file (9606.protein.aliases.v12.0.txt)
+  label_column: CLNSIG        # Column name for clinical significance labels
+  gene_column: Gene.refGene   # Column name for gene symbols
+
+# Data preprocessing
+preprocessing:
+  rwr_restart_prob: 0.15      # Random Walk with Restart parameter
+  ppr_alpha: 0.15             # Personalised PageRank teleport probability
+  exonic_only: true           # Restrict to exonic and splice-site variants
+  remove_super_hubs: true     # Remove superhub genes (UBC, histones, etc.)
+
+# Model architecture
+model:
+  classifier_type: logistic   # Modal 1 classifier (logistic or svm)
+  use_calibration: true       # Sigmoid calibration for Modal 1
+  gcn_hidden_dims: [64, 32]   # GCN hidden layer dimensions
+  gcn_output_dim: 16          # GCN output embedding dimension
+  attention_dim: 64           # Cross-attention dimension
+  mlp_hidden_dims: [128, 64, 32]  # Fusion MLP hidden dimensions
+  dropout: 0.3                # Dropout rate
+
+# Training
+training:
+  learning_rate: 0.0001       # Adam optimiser learning rate
+  epochs: 100                 # Number of training epochs
+  random_seed: 42             # Random seed for reproducibility
+
+# Output
+output:
+  directory: results/         # Output directory
+  top_k: [20, 50, 100]        # Top-K cutoffs to report
+  save_full_ranking: true     # Save complete variant-level ranking
+  save_gene_ranking: true     # Save gene-level max-score ranking
+  generate_figures: true      # Generate diagnostic plots
