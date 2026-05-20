@@ -17,7 +17,7 @@ The framework is disease-agnostic in architecture but disease-specific through s
 ### 1. Installation
 
 ```bash
-git clone https://github.com/[username]/DCV-TRIAGE.git
+git clone https://github.com/jeungmin-LEE/DCV-TRIAGE.git
 cd DCV-TRIAGE
 pip install -r requirements.txt
 ```
@@ -145,9 +145,9 @@ Configuration files used for the manuscript analyses are provided in `configs/`.
 If you use DCV-TRIAGE in your research, please cite:
 
 ```
-[Citation to be added upon publication]
+[Citation to be added upon publication] -  not yet
 ```
 
 ## Licence
 
-[MIT / Apache 2.0 — choose one]
+[MIT]
