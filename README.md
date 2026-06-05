@@ -128,6 +128,7 @@ output:
 - pandas, numpy, networkx
 - umap-learn
 - matplotlib (optional, for figures)
+- (optinal) annotated Clinvar 2014 file : https://drive.google.com/drive/folders/1lNBmFPeBedAV_PBIjohXkKaUZXqTD7HO
 
 See `requirements.txt` for exact versions.
 
